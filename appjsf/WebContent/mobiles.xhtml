@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns = "http://www.w3.org/1999/xhtml" 
+   xmlns:c = "http://java.sun.com/jsf/core"     
+   xmlns:h = "http://java.sun.com/jsf/html"> 
+<h:head>
+	<title>DataTable tag Example</title>
+	<h:outputStylesheet library = "css" name = "style.css"/> 
+</h:head>
+<h:body>
+	<h3>Datos de móviles</h3>
+	
+		<h:dataTable value="#{mobilerecords.mobiles}" var="mobile" border="3"
+			cellspacing="2" cellpadding="1">
+			<h:column>
+				<c:facet name="header">Name</c:facet>
+                    #{mobile.companyname}
+                </h:column>
+			<h:column>
+				<c:facet name="header">Model Number</c:facet>
+                    #{mobile.modelnumber}
+                </h:column>
+			<h:column>
+				<c:facet name="header">Color</c:facet>
+                    #{mobile.color}
+                </h:column>
+			<h:column>
+				<c:facet name="header">Quantity</c:facet>
+                    #{mobile.quantity}
+                </h:column>
+			<h:column>
+				<c:facet name="header">Price</c:facet>
+                    #{mobile.price}
+            </h:column>
+
+		</h:dataTable>
+		<br/>
+		
+		<h:graphicImage value = "/img/moviles.jpg"/> 
+		<h:graphicImage value = "/img/moviles2.jpg"/> 
+	
+
+</h:body>
+</html>
