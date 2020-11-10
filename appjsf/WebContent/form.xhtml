@@ -5,7 +5,7 @@
    xmlns:f = "http://java.sun.com/jsf/core"     
    xmlns:h = "http://java.sun.com/jsf/html"> 
    <h:head>  
-      <title>User Registration Form</title>  
+      <title>User Registration Form</title>        
    </h:head>  
    <h:body>  
    	<div>
@@ -16,11 +16,11 @@
          <table>  
             <tr>  
                <td><h:outputLabel for="username">User Name</h:outputLabel></td>  
-               <td><h:inputText id="name-id" value="#{user.name}"/></td>  
+               <td><h:inputText id="name-id" value="#{user.name}" onblur="validateName(this)"/></td>  
             </tr>  
             <tr>  
                <td><h:outputLabel for="email">Your Email</h:outputLabel></td>  
-               <td><h:inputText id="email-id" value="#{user.email}"/></td>  
+               <td><h:inputText id="email-id" value="#{user.email}" onblur="validateEmail(this)"/></td>  
             </tr>  
             <tr>  
                <td><h:outputLabel for="password">Password</h:outputLabel></td>  
@@ -40,7 +40,12 @@
                <td><h:inputTextarea value="#{user.address}" cols="50" rows="5"/></td>
             </tr>  
          </table>  
-         <h:commandButton value="Submit" action="response.xhtml"></h:commandButton>  
-      </h:form>  
+        <br />
+		<br />
+		<div id="mesg"></div>
+         <h:commandButton value="Submit" action="#{user.sendForm}"></h:commandButton>  
+      </h:form> 
+      
+      <h:outputScript library="js" name="script.js" /> 
    </h:body>  
 </html>

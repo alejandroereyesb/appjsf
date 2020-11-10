@@ -25,7 +25,7 @@ public class UserData implements Serializable {
       FacesContext fc = FacesContext.getCurrentInstance();
       Map<String,String> params = 
          fc.getExternalContext().getRequestParameterMap();
-      data =  params.get("username"); 
+      data =  params.get("mensaje"); 
       return "paramresult";
    }
 }

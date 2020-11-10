@@ -40,5 +40,8 @@ public class User{
    }  
    public void setAddress(String address) {  
       this.address = address;  
-   }      
+   } 
+   public String sendForm() {
+	   return "response";
+   }
 }  
