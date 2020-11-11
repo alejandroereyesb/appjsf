@@ -39,6 +39,17 @@
                <td><h:outputLabel for="address">Address</h:outputLabel></td>  
                <td><h:inputTextarea value="#{user.address}" cols="50" rows="5"/></td>
             </tr>  
+            <tr>
+               <td><h:outputLabel for="address">City</h:outputLabel></td>  
+               <td>
+	               <h:selectManyListbox value="#{user.city}">
+						<f:selectItem itemValue="Madrid" itemLabel="Madrid" />
+						<f:selectItem itemValue="Valencia" itemLabel="Valencia" />
+						<f:selectItem itemValue="Bilbao" itemLabel="Bilbao" />
+						<f:selectItem itemValue="Barcelona" itemLabel="Barcelona" />
+				   </h:selectManyListbox>
+               </td>
+            </tr>
          </table>  
         <br />
 		<br />

@@ -5,11 +5,13 @@ import javax.faces.bean.RequestScoped;
 @ManagedBean  
 @RequestScoped  
 public class User{  
-   String name;  
+   private String name;  
    String email;  
-   String password;  
+   private String password;  
    String gender;  
    String address;  
+   String[] city;
+
    public String getName() {  
       return name;  
    }  
@@ -44,4 +46,19 @@ public class User{
    public String sendForm() {
 	   return "response";
    }
+   public String[] getCity() {
+	return city;
+   }
+   public void setCity(String[] city) {
+	this.city = city;
+   }
+   
+   public String UservalidOrnot() { 
+
+   if(name.equals("alex") && password.equals("1234")) {
+       return "home";
+   }  else {
+       return "login";
+   }
+}
 }  
