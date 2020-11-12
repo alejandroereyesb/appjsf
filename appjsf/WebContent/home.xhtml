@@ -3,13 +3,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml" 
 xmlns:h="http://java.sun.com/jsf/html"
 xmlns:ui = "http://java.sun.com/jsf/facelets">
-	<h:head>
-		<title>Bienvienidos a mi página creada con JSF</title>
-		<h:outputStylesheet library = "css" name = "style.css"/> 
-	</h:head>
+
 	
 	<h:body>
 		<ui:composition template = "templates/common.xhtml">
+			<ui:param name = "logo" value = "icono.png" />	
+			<ui:define name="header">
+				<h1>Bienvenido a mi página web</h1>
+			</ui:define>
+		
+			<ui:define name="content">
+				<p>#{helloWorld.s1}</p>
+				<h:inputTextarea row = "10" col = "10" value = "Hello World!   
+			   Everything is fine!" readonly = "true"/>
+			   <p>Introduzca su nombre</p>
+			   <h:inputText value = "Hello World!" /> 
+			   <p>Ese es el contenido por defecto</p>
+			</ui:define>
 		</ui:composition>
 	</h:body>
 </html>

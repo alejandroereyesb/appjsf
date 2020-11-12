@@ -11,8 +11,10 @@
 		<h:outputStylesheet library = "css" name = "style.css"/> 
 	</h:head>
    <h:body>
-   	  <h2>#{title}</h2>
-      <div style = "border-width:2px; border-color:green; border-style:solid;">
+   	
+
+      <div class="header">
+      	 <h:graphicImage library="img" name="#{logo}" class="logo"/> 
          <ui:insert name = "header" >
          	<ui:param name = "defaultHeader" value = "Esta es la cabecera por defecto" />
             <ui:include src = "/templates/header.xhtml" />
@@ -20,7 +22,7 @@
       </div>
       <br/>
       
-      <div style = "border-width:2px; border-color:black; border-style:solid;">
+      <div class="navbar">
          <ui:insert name = "navbar" >
             <ui:include src = "/templates/navbar.xhtml" />
          </ui:insert>    
@@ -28,14 +30,14 @@
       <br/>
       
       
-      <div style = "border-width:2px; border-color:black; border-style:solid;">
+      <div class="content">
          <ui:insert name = "content" >
             <ui:include src = "/templates/contents.xhtml" />
          </ui:insert>    
       </div>
       <br/>
       
-      <div style = "border-width:2px; border-color:red; border-style:solid;">
+      <div class="footer">
          <ui:insert name = "footer" >
             <ui:include src = "/templates/footer.xhtml" />
          </ui:insert>

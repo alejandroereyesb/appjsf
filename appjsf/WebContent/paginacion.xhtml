@@ -4,70 +4,79 @@
 
 <html xmlns = "http://www.w3.org/1999/xhtml"
    xmlns:f = "http://java.sun.com/jsf/core"
-   xmlns:h = "http://java.sun.com/jsf/html">
+   xmlns:h = "http://java.sun.com/jsf/html"
+   xmlns:ui = "http://java.sun.com/jsf/facelets">
 
    <h:body>
-      <h2>Implicit Navigation</h2>
-      <hr />
+   		<ui:composition template = "templates/common.xhtml">
+   		<ui:param name = "logo" value = "icono.png" />	
+   		<ui:define name="header">
+				<h1>Implicit Navigation</h1>
+		</ui:define>
+   		
+   		
+   		<ui:define name="content">	
       
-      <h:form>
-         <h3>Using Managed Bean</h3>
-         <h:commandButton action = "#{navigationController.moveToPage1}"
-            value = "Page1" />
-         <h3>Poniendo el nombre de la vista a redireccionar</h3>
-         <h:commandButton action = "page2" value = "Page2" />
-      </h:form>
-      <br/>
-      
-      <h2>Conditional Navigation</h2>
-      <hr />
-      <h:form>
-         <h:commandLink action = "#{navigationController.showPage}"
-            value="Page1">
-            <f:param name = "pageId" value = "1" />
-         </h:commandLink>
-              
-         
-         <h:commandLink action = "#{navigationController.showPage}"
-            value="Page2">
-            <f:param name = "pageId" value = "2" />
-         </h:commandLink>
-              
-         
-         <h:commandLink action = "#{navigationController.showPage}"
-            value = "Paginacion">
-            <f:param name = "pageId" value = "3" />
-         </h:commandLink>
-      </h:form>
-      <br/>
-      
-      
-       <h2>Usando el bean para redirigir a Home</h2>
-      <hr />
-         <h:link outcome = "#{navigationController.moveToHomePage()}" value="Llevame a Home"/>        
-      <br/>
-      
-      <h2>"From Action" Navigation</h2>
-      <hr />
-      
-      <h:form>
-         <h:commandLink action = "#{navigationController.processPage1}"
-         value = "Page1" />
-              
-         <h:commandLink action = "#{navigationController.processPage2}"
-         value = "Page2" />
-              
-      </h:form>
-      <br/>
-      
-      <h2>Forward vs Redirection Navigation</h2>
-      <hr />
-      <h:form>
-         <h3>Forward</h3>
-         <h:commandButton action = "page1" value = "Page1" />
-         <h3>Redirect</h3>
-         <h:commandButton action = "page2?faces-redirect = true"
-         value = "Page2" />
-      </h:form>
+	      <h:form>
+	         <h3>Using Managed Bean</h3>
+	         <h:commandButton action = "#{navigationController.moveToPage1}"
+	            value = "Page1" />
+	         <h3>Poniendo el nombre de la vista a redireccionar</h3>
+	         <h:commandButton action = "page2" value = "Page2" />
+	      </h:form>
+	      <br/>
+	      
+	      <h2>Conditional Navigation</h2>
+	      <hr />
+	      <h:form>
+	         <h:commandLink action = "#{navigationController.showPage}"
+	            value="Page1">
+	            <f:param name = "pageId" value = "1" />
+	         </h:commandLink>
+	              
+	         
+	         <h:commandLink action = "#{navigationController.showPage}"
+	            value="Page2">
+	            <f:param name = "pageId" value = "2" />
+	         </h:commandLink>
+	              
+	         
+	         <h:commandLink action = "#{navigationController.showPage}"
+	            value = "Paginacion">
+	            <f:param name = "pageId" value = "3" />
+	         </h:commandLink>
+	      </h:form>
+	      <br/>
+	      
+	      
+	       <h2>Usando el bean para redirigir a Home</h2>
+	      <hr />
+	         <h:link outcome = "#{navigationController.moveToHomePage()}" value="Llevame a Home"/>        
+	      <br/>
+	      
+	      <h2>"From Action" Navigation</h2>
+	      <hr />
+	      
+	      <h:form>
+	         <h:commandLink action = "#{navigationController.processPage1}"
+	         value = "Page1" />
+	              
+	         <h:commandLink action = "#{navigationController.processPage2}"
+	         value = "Page2" />
+	              
+	      </h:form>
+	      <br/>
+	      
+	      <h2>Forward vs Redirection Navigation</h2>
+	      <hr />
+	      <h:form>
+	         <h3>Forward</h3>
+	         <h:commandButton action = "page1" value = "Page1" />
+	         <h3>Redirect</h3>
+	         <h:commandButton action = "page2?faces-redirect = true"
+	         value = "Page2" />
+	      </h:form>
+      </ui:define>
+      </ui:composition>
    </h:body>
 </html>
