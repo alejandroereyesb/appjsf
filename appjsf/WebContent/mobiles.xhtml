@@ -3,7 +3,9 @@
 
 <html xmlns = "http://www.w3.org/1999/xhtml" 
    xmlns:c = "http://java.sun.com/jsf/core"     
-   xmlns:h = "http://java.sun.com/jsf/html"> 
+   xmlns:h = "http://java.sun.com/jsf/html"
+   xmlns:ui="http://java.sun.com/jsf/facelets"
+   xmlns:tp = "http://java.sun.com/jsf/composite/com">
 <h:head>
 	<title>DataTable tag Example</title>
 	<h:outputStylesheet library = "css" name = "style.css"/> 
@@ -36,10 +38,23 @@
 
 		</h:dataTable>
 		<br/>
- 
+ <ui:remove>
 		<h:graphicImage library="img" name="moviles.jpg"/> 
 		<h:graphicImage library="img" name="moviles2.jpg"/> 
-	
-
+		</ui:remove>
+		
+	<div class="flex-container">
+	    <ui:repeat var="mobile" value="#{mobilerecords.mobiles}" varStatus="status">
+	      <tp:mobile
+	         url = "icono.png" 
+	         companyname = "#{mobile.companyname}"
+	         modelnumber = "#{mobile.modelnumber}" 
+	         color = "#{mobile.color}"
+	         quantity = "#{mobile.quantity}" 
+	         price = "#{mobile.price}" />
+   		</ui:repeat>
+   	</div>
+	      
+	   
 </h:body>
 </html>

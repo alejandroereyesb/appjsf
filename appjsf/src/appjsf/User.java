@@ -53,7 +53,7 @@ public class User{
 	this.city = city;
    }
    
-   public String UservalidOrnot() { 
+   public String userValidOrNot() { 
 
    if(name.equals("alex") && password.equals("1234")) {
        return "home";
