@@ -3,7 +3,8 @@
 
 <html xmlns = "http://www.w3.org/1999/xhtml" 
    xmlns:f = "http://java.sun.com/jsf/core"     
-   xmlns:h = "http://java.sun.com/jsf/html"> 
+   xmlns:h = "http://java.sun.com/jsf/html"
+   xmlns:ui = "http://java.sun.com/jsf/facelets"> 
    <h:head>  
       <title>User Registration Form</title>        
    </h:head>  
@@ -24,7 +25,16 @@
             </tr>  
             <tr>  
                <td><h:outputLabel for="password">Password</h:outputLabel></td>  
-               <td><h:inputSecret id="password-id" value="#{user.password}"/></td>  
+               <td>
+               <h:inputSecret id="password-id" value="#{user.password}" validatorMessage="Incorrect password… minimo 8 caracteres y/o ?.=">
+               
+               	<ui:remove>
+					<!-- <f:validateLength minimum = "8" /> -->
+				</ui:remove>
+               		<f:validateRegex pattern = "((?=.*[a-z]).{8,})" />
+               </h:inputSecret>
+               <h:message for = "password-id" style = "color:red" />
+               </td>  
             </tr>  
             
             <tr>  
@@ -37,7 +47,9 @@
             </tr>  
             <tr>
                <td><h:outputLabel for="address">Address</h:outputLabel></td>  
-               <td><h:inputTextarea value="#{user.address}" cols="50" rows="5"/></td>
+               <td><h:inputTextarea id="address" value="#{user.address}" cols="50" rows="5"/>
+               <h:message for="address" style=" color: red"/>  
+               </td>
             </tr>  
             <tr>
                <td><h:outputLabel for="address">City</h:outputLabel></td>  
@@ -50,6 +62,18 @@
 				   </h:selectManyListbox>
                </td>
             </tr>
+            <tr>
+               <td><h:outputLabel for="Amount">Amount</h:outputLabel></td>  
+               <td>            
+	               <h:inputText id="amount" value="#{user.salary}" 
+	                size="20" required="true"
+	                label="Amount" >
+	                <f:convertNumber minFractionDigits="2" />
+	                <f:validateDoubleRange minimum = "900" maximum = "1800" />
+            		</h:inputText>
+            		 <h:message for="amount" style="color:red" />
+            	</td>
+            </tr> 
          </table>  
         <br />
 		<br />

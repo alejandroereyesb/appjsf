@@ -41,7 +41,21 @@
 			</ui:repeat>
 		</td>
 
-      </tr>   
+      </tr>
+      
+      <tr>  
+         <td><b>Salary ["$"]</b></td>  
+         <td>
+         	<h:outputText value="#{user.salary}">
+                <f:convertNumber currencySymbol="$" type="currency" />
+            </h:outputText>
+         </td>  
+      </tr>
+      
+      
+
+
+         
       </table>  
    </h:body>  
 </html>  
