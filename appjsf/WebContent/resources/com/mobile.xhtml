@@ -7,6 +7,7 @@
    xmlns:f = "http://java.sun.com/jsf/core"
    xmlns:composite = "http://java.sun.com/jsf/composite">
    
+   
    <composite:interface>
       <composite:attribute name = "url" />
       <composite:attribute name = "companyname" />
@@ -19,7 +20,9 @@
 
    <composite:implementation>
 		<div class="card">
-		  <h:graphicImage library="img" name="#{cc.attrs.url}" alt="#{cc.attrs.modelnumber}"/> 
+		  <h:graphicImage value="#{cc.attrs.url}" alt="#{cc.attrs.modelnumber}"/>
+<!-- para local -->
+<!-- 		  <h:graphicImage library="img" name="#{cc.attrs.url}" alt="#{cc.attrs.modelnumber}"/>  -->
 		  <h1>#{cc.attrs.companyname}</h1>
 		  <p class="price">#{cc.attrs.price}</p>
 		  <p>#{cc.attrs.modelnumber}</p>

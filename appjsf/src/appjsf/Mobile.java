@@ -1,12 +1,8 @@
 package appjsf;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+//import java.util.ArrayList;
+//import java.util.Arrays;
 
-@ManagedBean(name = "mobilerecords", eager = true)
-@SessionScoped
 public class Mobile {
 
 	private String companyname;
@@ -14,19 +10,20 @@ public class Mobile {
 	private String color;
 	private int quantity;
 	private double price;
+	private String url;
 
-	private static final ArrayList<Mobile> mobiles = 
-			new ArrayList<Mobile>(
-			Arrays.asList(
-					new Mobile("Nokia", "N213", "Black", 10, 2500),
-					new Mobile("Micromax", "A114", "White", 25, 9500),
-					new Mobile("MotoG", "M345", "Grey", 40, 15300), 
-					new Mobile("Samsung", "S-512", "Blue", 15, 11000)
-					));
-
-	public ArrayList<Mobile> getMobiles() {
-		return mobiles;
-	}
+//	private static final ArrayList<Mobile> mobiles = 
+//			new ArrayList<Mobile>(
+//			Arrays.asList(
+//					new Mobile("Nokia", "N213", "Black", 10, 2500),
+//					new Mobile("Micromax", "A114", "White", 25, 9500),
+//					new Mobile("MotoG", "M345", "Grey", 40, 15300), 
+//					new Mobile("Samsung", "S-512", "Blue", 15, 11000)
+//					));
+//
+//	public ArrayList<Mobile> getMobiles() {
+//		return mobiles;
+//	}
 
 	public Mobile() {
 	}
@@ -78,6 +75,14 @@ public class Mobile {
 
 	public void setPrice(double price) {
 		this.price = price;
+	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
 	}
 
 }
